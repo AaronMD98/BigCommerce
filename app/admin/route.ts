@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation';
 
 const canonicalDomain: string = process.env.BIGCOMMERCE_GRAPHQL_API_DOMAIN ?? 'mybigcommerce.com';
 const BIGCOMMERCE_STORE_HASH = process.env.BIGCOMMERCE_STORE_HASH ?? '';
-const ENABLE_ADMIN_ROUTE = process.env.ENABLE_ADMIN_ROUTE === 'true'; // Convert to boolean directly
+const ENABLE_ADMIN_ROUTE = process.env.ENABLE_ADMIN_ROUTE; // Convert to boolean directly
 const SITE_ID = process.env.CHANNEL_ID ?? '';
 const ACCESS_TOKEN = process.env.BIGCOMMERCE_ACCESS_TOKEN;
 
