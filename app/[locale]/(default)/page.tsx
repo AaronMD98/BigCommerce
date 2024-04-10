@@ -1,3 +1,4 @@
+import { graphql } from 'graphql';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { fetchSites } from '~/app/api';
@@ -26,28 +27,13 @@ export default async function Home({ params: { locale } }: Props) {
 
   await fetchSites();
 
+  // console.log(newestProducts);
+
   return (
     <>
-      <Hero />
-
-      <div className="my-10">
-        <NextIntlClientProvider locale={locale} messages={{ Product: messages.Product ?? {} }}>
-          <ProductCardCarousel
-            products={featuredProducts}
-            showCart={false}
-            showCompare={false}
-            showReviews={false}
-            title={t('Carousel.featuredProducts')}
-          />
-          <ProductCardCarousel
-            products={newestProducts}
-            showCart={false}
-            showCompare={false}
-            showReviews={false}
-            title={t('Carousel.newestProducts')}
-          />
-        </NextIntlClientProvider>
-      </div>
+      <section className="pb-12">
+        <Hero />
+      </section>
     </>
   );
 }

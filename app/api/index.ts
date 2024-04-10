@@ -52,7 +52,7 @@ export async function fetchSites() {
 
     ///// PRINT THE OUTPUTS
     // console.log('OUTPUT (GET):', jsonGET);
-    console.log('OUTPUT (UPDATE):', json);
+    // console.log('OUTPUT (UPDATE):', json);
   } catch (err) {
     // This will catch network errors and errors thrown from the above throw statement
     console.error('Error:', err);

@@ -45,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `${title} - %s`,
       default: `${title}`,
     },
-    description: 'Example store built with Catalyst',
+    description: 'Test Store Built by Aaron',
     other: {
       platform: 'bigcommerce.catalyst',
       build_sha: process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ?? '',
@@ -65,8 +65,6 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
   unstable_setRequestLocale(locale);
 
   const messages = useMessages();
-
-
 
   return (
     <html className={`${inter.variable} font-sans`} lang={locale}>

@@ -11,6 +11,15 @@ const cspHeader = `
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn11.bigcommerce.com',
+        port: '',
+      },
+    ],
+  },
   reactStrictMode: true,
   experimental: {
     optimizePackageImports: ['@icons-pack/react-simple-icons'],
