@@ -45,14 +45,9 @@ export async function fetchSites() {
 
     if (!response.ok) {
       // This will catch HTTP errors such as 404, 500 etc.
-      throw new Error(`Error: ${response.statusText} : ${urlGET}`);
+      throw new Error(`Error: ${response.statusText} : ${url}`);
     }
     const json = await response.json();
-    // const jsonGET = await res.json();
-
-    ///// PRINT THE OUTPUTS
-    // console.log('OUTPUT (GET):', jsonGET);
-    // console.log('OUTPUT (UPDATE):', json);
   } catch (err) {
     // This will catch network errors and errors thrown from the above throw statement
     console.error('Error:', err);
