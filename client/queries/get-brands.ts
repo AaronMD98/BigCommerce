@@ -19,6 +19,9 @@ const GET_BRANDS_QUERY = graphql(`
             entityId
             name
             path
+            defaultImage {
+              url(height: 300, width: 300)
+            }
           }
         }
       }

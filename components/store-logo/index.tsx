@@ -34,7 +34,7 @@ export const StoreLogo = ({ data }: Props) => {
   return (
     <BcImage
       alt={logo.image.altText ? logo.image.altText : storeName}
-      className="max-h-16 object-contain"
+      className="max-h-16 w-max object-contain duration-200 hover:scale-105"
       height={32}
       priority
       src={logo.image.url}

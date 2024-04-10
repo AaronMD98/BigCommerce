@@ -38,7 +38,7 @@ export const Hero = () => (
           </div>
         </div>
       </SlideshowSlide>
-      <SlideshowSlide>
+      {/* <SlideshowSlide>
         <div className="z-10 flex flex-col gap-4 px-12 pb-48 pt-36">
           <h2 className="text-5xl font-black lg:text-6xl">Great Deals</h2>
           <p className="max-w-xl">
@@ -61,13 +61,13 @@ export const Hero = () => (
             <a href="/#">Shop now</a>
           </Button>
         </div>
-      </SlideshowSlide>
+      </SlideshowSlide> */}
     </SlideshowContent>
-    <SlideshowControls>
+    {/* <SlideshowControls>
       <SlideshowAutoplayControl />
       <SlideshowPreviousIndicator />
       <SlideshowPagination />
       <SlideshowNextIndicator />
-    </SlideshowControls>
+    </SlideshowControls> */}
   </Slideshow>
 );

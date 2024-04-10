@@ -103,7 +103,7 @@ export const Counter = forwardRef<ElementRef<'div'>, CounterProps>(
     };
 
     return (
-      <div className={cn('relative')} ref={ref}>
+      <div className={cn('relative w-max')} ref={ref}>
         <button
           aria-hidden="true"
           aria-label="Decrease count"

@@ -24,6 +24,7 @@ export const QuantityField = () => {
         name={field.name}
         onChange={field.onChange}
         value={Number(field.value)}
+        className="w-max rounded shadow-md"
       />
     </div>
   );

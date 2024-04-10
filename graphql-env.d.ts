@@ -496,6 +496,30 @@ export type introspection = {
         ]
       },
       {
+        "kind": "OBJECT",
+        "name": "AlreadyExistsError",
+        "fields": [
+          {
+            "name": "message",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "args": []
+          }
+        ],
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "Error"
+          }
+        ]
+      },
+      {
         "kind": "INPUT_OBJECT",
         "name": "ApplyCheckoutCouponDataInput",
         "inputFields": [
@@ -996,6 +1020,78 @@ export type introspection = {
                   "ofType": {
                     "kind": "INPUT_OBJECT",
                     "name": "UnassignCartFromCustomerInput",
+                    "ofType": null
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "createCartMetafield",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "CreateCartMetafieldResult",
+                "ofType": null
+              }
+            },
+            "args": [
+              {
+                "name": "input",
+                "type": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "CreateCartMetafieldInput",
+                    "ofType": null
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "updateCartMetafield",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "UpdateCartMetafieldResult",
+                "ofType": null
+              }
+            },
+            "args": [
+              {
+                "name": "input",
+                "type": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "UpdateCartMetafieldInput",
+                    "ofType": null
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "deleteCartMetafield",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "DeleteCartMetafieldResult",
+                "ofType": null
+              }
+            },
+            "args": [
+              {
+                "name": "input",
+                "type": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "DeleteCartMetafieldInput",
                     "ofType": null
                   }
                 }
@@ -2233,6 +2329,118 @@ export type introspection = {
         ]
       },
       {
+        "kind": "INPUT_OBJECT",
+        "name": "CreateCartMetafieldDataInput",
+        "inputFields": [
+          {
+            "name": "key",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          },
+          {
+            "name": "value",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "UNION",
+        "name": "CreateCartMetafieldError",
+        "possibleTypes": [
+          {
+            "kind": "OBJECT",
+            "name": "NotFoundError"
+          },
+          {
+            "kind": "OBJECT",
+            "name": "AlreadyExistsError"
+          },
+          {
+            "kind": "OBJECT",
+            "name": "ValidationError"
+          },
+          {
+            "kind": "OBJECT",
+            "name": "LimitExceededError"
+          }
+        ]
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "CreateCartMetafieldInput",
+        "inputFields": [
+          {
+            "name": "cartEntityId",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          },
+          {
+            "name": "data",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "CreateCartMetafieldDataInput",
+                "ofType": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "OBJECT",
+        "name": "CreateCartMetafieldResult",
+        "fields": [
+          {
+            "name": "metafield",
+            "type": {
+              "kind": "OBJECT",
+              "name": "Metafields",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "errors",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "UNION",
+                    "name": "CreateCartMetafieldError",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            "args": []
+          }
+        ],
+        "interfaces": []
+      },
+      {
         "kind": "OBJECT",
         "name": "CreateCartResult",
         "fields": [
@@ -3169,6 +3377,86 @@ export type introspection = {
         "interfaces": []
       },
       {
+        "kind": "UNION",
+        "name": "DeleteCartMetafieldError",
+        "possibleTypes": [
+          {
+            "kind": "OBJECT",
+            "name": "NotFoundError"
+          },
+          {
+            "kind": "OBJECT",
+            "name": "ValidationError"
+          },
+          {
+            "kind": "OBJECT",
+            "name": "NotAuthorisedError"
+          }
+        ]
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "DeleteCartMetafieldInput",
+        "inputFields": [
+          {
+            "name": "cartEntityId",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          },
+          {
+            "name": "metafieldEntityId",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "OBJECT",
+        "name": "DeleteCartMetafieldResult",
+        "fields": [
+          {
+            "name": "deletedMetafieldEntityId",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "errors",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "UNION",
+                    "name": "DeleteCartMetafieldError",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            "args": []
+          }
+        ],
+        "interfaces": []
+      },
+      {
         "kind": "OBJECT",
         "name": "DeleteCartResult",
         "fields": [
@@ -3432,6 +3720,10 @@ export type introspection = {
           },
           {
             "kind": "OBJECT",
+            "name": "AlreadyExistsError"
+          },
+          {
+            "kind": "OBJECT",
             "name": "CustomerAddressCreationError"
           },
           {
@@ -3464,7 +3756,55 @@ export type introspection = {
           },
           {
             "kind": "OBJECT",
+            "name": "LimitExceededError"
+          },
+          {
+            "kind": "OBJECT",
+            "name": "NotAuthorisedError"
+          },
+          {
+            "kind": "OBJECT",
+            "name": "NotFoundError"
+          },
+          {
+            "kind": "OBJECT",
             "name": "ValidationError"
+          }
+        ]
+      },
+      {
+        "kind": "OBJECT",
+        "name": "LimitExceededError",
+        "fields": [
+          {
+            "name": "limit",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "args": []
+          },
+          {
+            "name": "message",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "args": []
+          }
+        ],
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "Error"
           }
         ]
       },
@@ -3736,6 +4076,54 @@ export type introspection = {
           }
         ],
         "interfaces": []
+      },
+      {
+        "kind": "OBJECT",
+        "name": "NotAuthorisedError",
+        "fields": [
+          {
+            "name": "message",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "args": []
+          }
+        ],
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "Error"
+          }
+        ]
+      },
+      {
+        "kind": "OBJECT",
+        "name": "NotFoundError",
+        "fields": [
+          {
+            "name": "message",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "args": []
+          }
+        ],
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "Error"
+          }
+        ]
       },
       {
         "kind": "INPUT_OBJECT",
@@ -4687,6 +5075,123 @@ export type introspection = {
               "kind": "OBJECT",
               "name": "Cart",
               "ofType": null
+            },
+            "args": []
+          }
+        ],
+        "interfaces": []
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "UpdateCartMetafieldDataInput",
+        "inputFields": [
+          {
+            "name": "key",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          {
+            "name": "value",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        ]
+      },
+      {
+        "kind": "UNION",
+        "name": "UpdateCartMetafieldError",
+        "possibleTypes": [
+          {
+            "kind": "OBJECT",
+            "name": "NotFoundError"
+          },
+          {
+            "kind": "OBJECT",
+            "name": "AlreadyExistsError"
+          },
+          {
+            "kind": "OBJECT",
+            "name": "ValidationError"
+          },
+          {
+            "kind": "OBJECT",
+            "name": "NotAuthorisedError"
+          }
+        ]
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "UpdateCartMetafieldInput",
+        "inputFields": [
+          {
+            "name": "cartEntityId",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          },
+          {
+            "name": "metafieldEntityId",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          },
+          {
+            "name": "data",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "UpdateCartMetafieldDataInput",
+                "ofType": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "OBJECT",
+        "name": "UpdateCartMetafieldResult",
+        "fields": [
+          {
+            "name": "metafield",
+            "type": {
+              "kind": "OBJECT",
+              "name": "Metafields",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "errors",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "UNION",
+                    "name": "UpdateCartMetafieldError",
+                    "ofType": null
+                  }
+                }
+              }
             },
             "args": []
           }
@@ -13541,6 +14046,10 @@ export type introspection = {
           },
           {
             "kind": "OBJECT",
+            "name": "PicklistOrTextFormField"
+          },
+          {
+            "kind": "OBJECT",
             "name": "RadioButtonsFormField"
           },
           {
@@ -16795,6 +17304,99 @@ export type introspection = {
                     "ofType": null
                   }
                 }
+              }
+            },
+            "args": []
+          },
+          {
+            "name": "entityId",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "args": []
+          },
+          {
+            "name": "label",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "args": []
+          },
+          {
+            "name": "sortOrder",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "args": []
+          },
+          {
+            "name": "isBuiltIn",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "args": []
+          },
+          {
+            "name": "isRequired",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "args": []
+          }
+        ],
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "FormField"
+          }
+        ]
+      },
+      {
+        "kind": "OBJECT",
+        "name": "PicklistOrTextFormField",
+        "fields": [
+          {
+            "name": "maxLength",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "picklistPrefix",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
               }
             },
             "args": []
