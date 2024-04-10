@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { fetchSites } from '~/app/api';
 
 import { getFeaturedProducts } from '~/client/queries/get-featured-products';
 import { getNewestProducts } from '~/client/queries/get-newest-products';
@@ -22,6 +23,8 @@ export default async function Home({ params: { locale } }: Props) {
     getNewestProducts(),
     getFeaturedProducts(),
   ]);
+
+  await fetchSites();
 
   return (
     <>

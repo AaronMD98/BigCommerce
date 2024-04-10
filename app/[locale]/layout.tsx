@@ -14,6 +14,7 @@ import { revalidate } from '~/client/revalidate-target';
 
 import { Notifications } from '../notifications';
 import { Providers } from '../providers';
+import { fetchSites } from '../api';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -64,6 +65,8 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
   unstable_setRequestLocale(locale);
 
   const messages = useMessages();
+
+
 
   return (
     <html className={`${inter.variable} font-sans`} lang={locale}>
