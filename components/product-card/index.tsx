@@ -105,7 +105,7 @@ export const ProductCard = ({
           {product.defaultImage ? (
             <BcImage
               alt={product.defaultImage.altText ?? product.name ?? ''}
-              className="object-contain"
+              className="overflow-hiddenn"
               fill
               priority={imagePriority}
               sizes="(max-width: 768px) 50vw, (max-width: 1536px) 25vw, 500px"

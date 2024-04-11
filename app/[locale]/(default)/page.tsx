@@ -14,6 +14,7 @@ import { LocaleType } from '~/i18n';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ProductCard } from '~/components/product-card';
+import { getProducts } from '~/client/queries/get-products';
 
 interface Props {
   params: {
@@ -34,31 +35,37 @@ export default async function Home({ params: { locale } }: Props) {
 
   await fetchSites();
 
-  console.log('BRANDS', allBrands);
+  console.log('BRANDS', newestProducts);
 
   return (
     <>
-      <section className="pb-12">
-        <Hero />
-      </section>
-      {/* <section className="flex flex-col rounded-md">
-        <h1 className="text-center text-xl font-semibold">Shop From Your Favourite Brands</h1>
-        <div className="flex justify-center gap-8">
-          {allBrands.map((brand) => {
-            if (!brand.defaultImage) return;
-
-            return (
-              <Link href={brand.path}>
-                <Image src={brand.defaultImage.url} height={300} width={300} alt={brand.name} />
-                <h6 className="text-6xl font-bold uppercase ">{brand.name}</h6>
-              </Link>
-            );
-          })}
+      <section className="relative flex min-h-[800px] items-end">
+        <Image
+          src={
+            'https://cdn11.bigcommerce.com/s-xfgpdj5616/images/stencil/original/image-manager/hero.jpg?t=1712795072'
+          }
+          height={600}
+          width={700}
+          alt="Hero for Airpack Backpack"
+          className="absolute -z-10 flex h-full w-full object-cover"
+          priority
+        />
+        <div className="flex flex-col gap-8 p-8 pb-16  capitalize text-white">
+          <h2 className="text-8xl font-semibold uppercase">50% more space</h2>
+          <h1 className="text-4xl">Airpack patented Technology</h1>
+          <button className="w-max bg-blue-600 px-4 py-2">Explore Now</button>
         </div>
-      </section> */}
-      <section className="flex flex-wrap">
+      </section>
+      <div className="flex w-full justify-center bg-[#131313] py-4 text-white">
+        <h4 className="text-4xl">
+          $600,000 Raised on <span className="text-5xl font-bold">Kickstarter</span> with{' '}
+          <span className="font-semibold">1567</span> backers
+        </h4>
+      </div>
+
+      <section className="flex flex-wrap px-8">
         <ProductCardCarousel
-          title={'Newest Products'}
+          title=""
           products={newestProducts}
           showCart={false}
           showCompare={false}
