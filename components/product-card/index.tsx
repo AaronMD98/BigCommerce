@@ -96,7 +96,7 @@ export const ProductCard = ({
     <ComponentsProductCard key={product.entityId}>
       <ProductCardImage>
         <div
-          className={cn('relative flex-auto', {
+          className={cn('relative flex-auto rounded', {
             'aspect-square': imageSize === 'square',
             'aspect-[4/5]': imageSize === 'tall',
             'aspect-[7/5]': imageSize === 'wide',
@@ -105,7 +105,7 @@ export const ProductCard = ({
           {product.defaultImage ? (
             <BcImage
               alt={product.defaultImage.altText ?? product.name ?? ''}
-              className="overflow-hiddenn"
+              className="overflow-hidden object-cover"
               fill
               priority={imagePriority}
               sizes="(max-width: 768px) 50vw, (max-width: 1536px) 25vw, 500px"
@@ -116,7 +116,7 @@ export const ProductCard = ({
           )}
         </div>
       </ProductCardImage>
-      <ProductCardInfo className={cn(showCart && 'justify-end')}>
+      <ProductCardInfo className={cn(showCart && 'flex w-full justify-center p-4 text-center')}>
         {product.brand && <ProductCardInfoBrandName>{product.brand.name}</ProductCardInfoBrandName>}
         <ProductCardInfoProductName>
           {product.path ? (
@@ -132,7 +132,7 @@ export const ProductCard = ({
           )}
         </ProductCardInfoProductName>
         {product.reviewSummary && showReviews && (
-          <div className="flex items-center gap-3">
+          <div className="flex w-full items-center justify-center gap-3">
             <p
               aria-describedby={summaryId}
               className={cn(
@@ -158,7 +158,7 @@ export const ProductCard = ({
             </div>
           </div>
         )}
-        <div className="flex flex-wrap items-end justify-between pt-1">
+        <div className="flex flex-wrap justify-center pt-1">
           <ProductCardInfoPrice>
             <Pricing prices={product.prices} />
           </ProductCardInfoPrice>
@@ -170,8 +170,8 @@ export const ProductCard = ({
             />
           )}
         </div>
+        {showCart && <Cart product={product} />}
       </ProductCardInfo>
-      {showCart && <Cart product={product} />}
     </ComponentsProductCard>
   );
 };

@@ -5,29 +5,29 @@ const SITE_ID = process.env.BIGCOMMERCE_CHANNEL_ID;
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
 // Assuming you want to fetch information for a specific site, you should include SITE_ID in your URL
-const url: string = `https://api.bigcommerce.com/stores/${BIGCOMMERCE_STORE_HASH}/v3/sites/1001`;
+const url = `https://api.bigcommerce.com/stores/${BIGCOMMERCE_STORE_HASH}/v3/sites/1001`;
 
 ///// GET URL
-const urlGET: string = `https://api.bigcommerce.com/stores/${BIGCOMMERCE_STORE_HASH}/v3/channels/${SITE_ID}/site`;
+// const urlGET: string = `https://api.bigcommerce.com/stores/${BIGCOMMERCE_STORE_HASH}/v3/channels/${SITE_ID}/site`;
 
 ///// POST URL
-const urlPOST: string = `https://api.bigcommerce.com/stores/${BIGCOMMERCE_STORE_HASH}/v3/sites/${SITE_ID}/routes`;
+// const urlPOST = `https://api.bigcommerce.com/stores/${BIGCOMMERCE_STORE_HASH}/v3/sites/${SITE_ID}/routes`;
 
-let headers: Record<string, any> = {
+const headers: Record<string, any> = {
   Accept: 'application/json',
   'Content-Type': 'application/json',
   'X-Auth-Token': ACCESS_TOKEN,
 };
 
-const options = {
-  method: 'GET',
-  headers,
-};
+// const options = {
+//   method: 'GET',
+//   headers,
+// };
 
-const optionsPOST = {
-  method: 'POST',
-  headers,
-};
+// const optionsPOST = {
+//   method: 'POST',
+//   headers,
+// };
 
 const optionsPUT = {
   method: 'PUT',

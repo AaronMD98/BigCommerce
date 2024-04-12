@@ -14,7 +14,6 @@ import { revalidate } from '~/client/revalidate-target';
 
 import { Notifications } from '../notifications';
 import { Providers } from '../providers';
-import { fetchSites } from '../api';
 
 const inter = Inter({
   subsets: ['latin'],

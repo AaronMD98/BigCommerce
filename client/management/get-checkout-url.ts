@@ -12,6 +12,7 @@ const RedirectUrlsSchema = z.object({
 
 // Url used to redirect the user to the checkout page
 export const getCheckoutUrl = async (cartId: string) => {
+  console.log(cartId);
   const response = await client.fetchCartRedirectUrls(cartId);
   const parsedResponse = RedirectUrlsSchema.safeParse(response);
 

@@ -3,12 +3,12 @@ import Image from 'next/image';
 import { Button } from '@bigcommerce/components/button';
 import {
   Slideshow,
-  SlideshowAutoplayControl,
+  // SlideshowAutoplayControl,
   SlideshowContent,
-  SlideshowControls,
-  SlideshowNextIndicator,
-  SlideshowPagination,
-  SlideshowPreviousIndicator,
+  // SlideshowControls,
+  // SlideshowNextIndicator,
+  // SlideshowPagination,
+  // SlideshowPreviousIndicator,
   SlideshowSlide,
 } from '@bigcommerce/components/slideshow';
 
@@ -23,9 +23,7 @@ export const Hero = () => (
             fill
             priority
             sizes="(max-width: 1536px) 100vw, 1536px"
-            src={
-              'https://cdn11.bigcommerce.com/s-xfgpdj5616/images/stencil/original/image-manager/c-d-x-pdx-a-82obo-unsplash.jpg?t=1712723154'
-            }
+            src="https://cdn11.bigcommerce.com/s-xfgpdj5616/images/stencil/original/image-manager/c-d-x-pdx-a-82obo-unsplash.jpg?t=1712723154"
           />
           <div className="flex flex-col gap-4 px-12 pb-48 pt-36">
             <h2 className="text-5xl font-black lg:text-6xl">25% Off Sale</h2>

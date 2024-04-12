@@ -4,7 +4,7 @@ import { FragmentOf, graphql } from '~/client/graphql';
 import { StoreLogo, StoreLogoFragment } from '../store-logo';
 
 import { ContactInformation, ContactInformationFragment } from './contact-information';
-import { Copyright, CopyrightFragment } from './copyright';
+// import { Copyright, CopyrightFragment } from './copyright';
 import {
   BrandFooterMenu,
   BrandsFooterMenuFragment,
@@ -37,7 +37,7 @@ export const FooterFragment = graphql(
     BrandsFooterMenuFragment,
     CategoryFooterMenuFragment,
     ContactInformationFragment,
-    CopyrightFragment,
+    // CopyrightFragment,
     SocialIconsFragment,
     StoreLogoFragment,
     WebPageFooterMenuFragment,

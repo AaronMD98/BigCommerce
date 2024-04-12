@@ -4,8 +4,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNextIndicator,
-  CarouselPreviousIndicator,
+  // CarouselNextIndicator,
+  // CarouselPreviousIndicator,
 } from '@bigcommerce/components/carousel';
 
 import { Product, ProductCard } from '../product-card';
@@ -19,7 +19,7 @@ export const ProductCardCarousel = ({
   showCompare = true,
   showReviews = true,
 }: {
-  title: string;
+  title?: string;
   products: Array<Partial<Product>>;
   showCart?: boolean;
   showCompare?: boolean;
@@ -46,15 +46,15 @@ export const ProductCardCarousel = ({
   }, []);
 
   return (
-    <Carousel aria-labelledby="title" className="mb-14" opts={{ loop: true }}>
+    <Carousel aria-labelledby="title" className="flex w-full" opts={{ loop: true }}>
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-black lg:text-4xl" id="title">
+        {/* <h2 className="text-3xl font-black lg:text-4xl" id="title">
           {title}
-        </h2>
-        <span className="no-wrap flex">
+        </h2> */}
+        {/* <span className="no-wrap flex">
           <CarouselPreviousIndicator />
           <CarouselNextIndicator />
-        </span>
+        </span> */}
       </div>
       <CarouselContent>
         {groupedProducts.map((group, index) => (

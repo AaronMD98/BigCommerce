@@ -29,13 +29,14 @@ export const Cart = ({ product }: { product: Partial<Product> }) => {
   newSearchParams.set('showQuickAdd', String(product.entityId));
 
   return Array.isArray(product.productOptions) && product.productOptions.length > 0 ? (
-    <Button asChild>
+    <Button asChild className="w-full justify-center ">
       <Link
-        className="mt-2 hover:text-white"
+        className="mt-2 shadow hover:text-white"
         href={`${pathname}?${newSearchParams.toString()}`}
         scroll={false}
       >
-        {t('quickAdd')}
+        {/* {t('quickAdd')} */}
+        Add to card
       </Link>
     </Button>
   ) : (
@@ -52,7 +53,7 @@ export const Cart = ({ product }: { product: Partial<Product> }) => {
 
         toast.success(
           () => (
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3">
               <span>
                 {t.rich('addedProductQuantity', {
                   cartItems: quantity,
